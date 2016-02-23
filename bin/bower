@@ -1,3 +1,4 @@
 #!/bin/bash
 
-docker run -t -v $(pwd):/data --rm chekote/bower bower "$@"
+docker run -it -v $(pwd):/data --rm chekote/bower "echo pid1 > /dev/null && bower $@"
+
