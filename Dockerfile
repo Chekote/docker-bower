@@ -1,3 +1,4 @@
+# chekote/bower
 FROM chekote/node
 
 RUN npm install bower -g
