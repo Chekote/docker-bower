@@ -1,9 +1,11 @@
 # chekote/bower
 FROM chekote/node
 
-RUN npm install bower -g
+RUN useradd -m -u 1000 bower && \
+    npm install bower -g
 
 ADD ./config/.bowerrc /root/.bowerrc
 
-ENTRYPOINT ["/bin/bash", "-c"]
+USER bower
 
+ENTRYPOINT ["/bin/bash", "-c"]
